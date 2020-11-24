@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Upload invoice</h1>
+<div mat-dialog-content>
+  <input type="file" #file style="display: none" accept=".csv" (change)="onFilesAdded()"/>
+  <button id="upload-file-btn" mat-stroked-button color="primary" (click)="addFile()">Select file</button>
+  <br>
+  <mat-progress-bar *ngIf="progress" mode="determinate" [value]="progress | async"></mat-progress-bar>
+  <br>
+  <span *ngIf="uploaded">Uploade compelete!</span>
+  <span *ngIf="error">{{error}}</span>
+  <br>
+  <span *ngIf="validationError">Vaildation Errors: {{validationError | async}}</span>
+</div>
+<div mat-dialog-actions style="display: flex; justify-content: center;">
+  <button mat-button (click)="onCancelClick()">Cancel</button>
+  <button mat-button (click)="onOkClick()" cdkFocusInitial>Ok</button>
+</div>

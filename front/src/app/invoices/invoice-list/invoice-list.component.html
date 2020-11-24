@@ -1,0 +1,29 @@
+<button mat-raised-button (click)="openDialog()">Upload file</button>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="matDataSource">
+    <ng-container matColumnDef="IncomingId">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.IncomingId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Amount">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="DueDate">
+      <th mat-header-cell *matHeaderCellDef> DueDate </th>
+      <td mat-cell *matCellDef="let element"> {{element.DueDate | date}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="SellingPrice">
+      <th mat-header-cell *matHeaderCellDef> SellingPrice </th>
+      <td mat-cell *matCellDef="let element"> {{element.SellingPrice}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 20, 50]" showFirstLastButtons></mat-paginator>
+</div>

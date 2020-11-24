@@ -1,0 +1,36 @@
+{
+  "name": "fashlab-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm run migration:up && npm run test",
+    "start": "node lib/index.js",
+    "start:watch": "npx nodemon lib/index.js",
+    "test": "npx eslint lib --fix && jest",
+    "migration:add": "node .\\lib\\common\\migration.js add migration",
+    "migration:up": "node .\\lib\\common\\migration.js up",
+    "migration:refresh": "node .\\lib\\common\\migration.js refresh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.3.2",
+    "cors": "^2.8.5",
+    "csv-parse": "^4.14.1",
+    "dayjs": "^1.9.6",
+    "express": "^4.17.1",
+    "formidable": "^1.2.2",
+    "mysql-migrations": "^1.0.7",
+    "mysql2": "^2.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6"
+  }
+}
