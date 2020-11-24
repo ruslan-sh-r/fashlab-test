@@ -16,3 +16,12 @@ How to deploy *frontend*:
 How to run backend tests:
 * go to back folder
 * run command in console: "npm run test"
+
+\
+\
+\
+**Screenshots:**
+
+![screen1](/assets/screen1.png)
+
+![screen2](/assets/screen2.png)
